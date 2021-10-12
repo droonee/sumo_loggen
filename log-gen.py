@@ -45,7 +45,7 @@ faker = Faker()
 timestr = time.strftime("%Y%m%d-%H%M%S")
 otime = datetime.datetime.now()
 
-outFileName = 'apache_access.log'
+outFileName = 'access.log'
 
 for case in switch(output_type):
     if case('LOG'):
