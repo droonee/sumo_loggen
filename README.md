@@ -10,4 +10,72 @@ sudo apt update
 ```
 sudo apt install python2-minimal
 ```
-4. 
+4. Check Python (2.7.x) version
+```
+python2 -V
+```
+5. See all Python versions on system - should see 3.x and 2.x
+```
+ls /usr/bin/python*
+```
+6. Add Python priority
+```
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+```
+7. Check default Python version - should see Python 3.x
+```
+python -V
+```
+8. We need to use Python 2.7.x, so change the default Python priority - follow instructions below
+```
+ubuntu@ip-172-31-16-7:~$ sudo update-alternatives --config python
+There are 2 choices for the alternative python (providing /usr/bin/python).
+
+  Selection    Path              Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/python3   2         auto mode
+  1            /usr/bin/python2   1         manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 1 
+update-alternatives: using /usr/bin/python2 to provide /usr/bin/python (python) in manual mode
+ubuntu@ip-172-31-16-7:~$ sudo update-alternatives --config python
+There are 2 choices for the alternative python (providing /usr/bin/python).
+
+  Selection    Path              Priority   Status
+------------------------------------------------------------
+  0            /usr/bin/python3   2         auto mode
+* 1            /usr/bin/python2   1         manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:   
+ubuntu@ip-172-31-16-7:~$ 
+```
+9. We should see Python 2.7.18 being used as our default Python version now
+```
+python -V
+```
+10. Let's update again
+```
+sudo apt update
+```
+11. Now we want to install pip
+```
+sudo apt install curl 
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python get-pip.py
+```
+12. Check pip version - should be 20.x
+```
+pip --version
+```
+13. Install Python package requirements for the script
+```
+pip install numpy
+pip install Faker
+pip install pytz
+pip install tzlocal
+```
+14. Check that your Python packages are installed - should see all installed packages and their dependencies
+```
+pip freeze
+```
+15. 
