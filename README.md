@@ -78,4 +78,20 @@ pip install tzlocal
 ```
 pip freeze
 ```
-15. 
+15. Copy `log-gen.py` into a Python file on the Ubuntu EC2 instance
+```
+vi log-gen.py
+(press 'i' to insert text in vi)
+copy/paste the log-gen.py code from this repo into vi  
+```
+16. Make the new script executable
+```
+chmod +x log-gen.py
+```
+17. Run the script with options
+```
+python log-gen.py -o CONSOLE // this will print output to the Ubuntu EC2 console
+python log-gen.py -o LOG // this will print output to a log called "access.log"
+python log-gen.py -o GZ // this will print output to a gunzip file called "access.log.gz"
+```
+18. To stop script from running, hit `ctrl + c` in the terminal
