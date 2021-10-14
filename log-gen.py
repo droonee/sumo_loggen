@@ -63,7 +63,7 @@ verb=["GET","POST","DELETE","PUT","PATCH"]
 resources=["/list","/wp-content","/wp-admin","/explore","/search/tag/list","/app/main/posts","/posts/posts/explore","/apps/cart.jsp?appID="]
 ualist = [faker.firefox, faker.chrome, faker.safari, faker.internet_explorer, faker.opera]
 
-num_logs = [2,10,25,60,100]
+num_logs = [1,5,20,40,80,100]
 log_lines = 1
 flag = True
 while (flag):
@@ -89,6 +89,6 @@ while (flag):
 
     log_lines = log_lines - 1
     if log_lines == 0:
-        log_lines = numpy.random.choice(num_logs,p=[0.4,0.3,0.2,0.05,0.05])
+        log_lines = numpy.random.choice(num_logs,p=[0.05,0.3,0.3,0.2,0.1,0.05])
         sleeptime = random.uniform(3.0,8.0)
         time.sleep(sleeptime)
