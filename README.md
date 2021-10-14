@@ -1,7 +1,7 @@
 # apachegen
 Generate fake Apache log messages on an Ubuntu EC2 instance.
 
-1. Deploy an AWS EC2 Ubuntu instance
+1. Deploy an AWS EC2 Ubuntu Server 20.04 instance.  Instructions below only tested for v20.04
 2. Update the Ubuntu server packages 
 ```
 sudo apt update
