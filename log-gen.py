@@ -43,7 +43,7 @@ output_type = args.output_type
 faker = Faker()
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
-otime = datetime.datetime.now()
+otime = datetime.datetime.now() - datetime.timedelta(hours=1)
 
 outFileName = 'access.log'
 
@@ -61,13 +61,13 @@ for case in switch(output_type):
 response=["200","404","500","301","401","303"]
 verb=["GET","POST","DELETE","PUT","PATCH"]
 resources=["/list","/wp-content","/wp-admin","/explore","/search/tag/list","/app/main/posts","/posts/posts/explore","/apps/cart.jsp?appID="]
-ualist = [faker.firefox, faker.chrome, faker.safari, faker.internet_explorer, faker.opera]
+ualist=["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1", "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_8 like Mac OS X) AppleWebKit/536.2 (KHTML, like Gecko) FxiOS/17.5h1393.0 Mobile/09X753 Safari/536.2", "iPad; CPU iPad OS 12_4_8 like Mac OS X", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_8 rv:3.0; kk-KZ) AppleWebKit/531.6.3 (KHTML, like Gecko) Version/5.0.1 Safari/531.6.3", "Opera/9.61.(X11; Linux x86_64; az-IN) Presto/2.9.190 Version/12.00"]
 
 num_logs = [1,5,20,40,80,100]
 log_lines = 1
 flag = True
 while (flag):
-    increment = datetime.timedelta(seconds=random.randint(30, 300))
+    increment = datetime.timedelta(seconds=random.randint(1, 2))
     otime += increment
 
     ip = faker.ipv4()
