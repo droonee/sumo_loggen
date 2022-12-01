@@ -1,2 +1,2 @@
-# apachegen
-Generate fake Apache log messages.
+# Random Log Generator
+Generate fake log messages for different log types
