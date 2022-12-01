@@ -6,7 +6,7 @@ import random
 import requests
 from tzlocal import get_localzone
 
-apache_url = "<http endpoint>"
+sumo_endpoint = "<http source endpoint>"
 
 def apache_log():
     local_time = get_localzone()
@@ -26,7 +26,7 @@ def apache_log():
     useragent = random.choice(jsonfile["user_agent"])
     mydata = ('%s %s - - [%s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (priv_ipv4,
               pub_ipv4, local_time, method, uri, status_code, bytes, filepath, useragent))
-    req = requests.post(apache_url, data=mydata)
+    req = requests.post(sumo_endpoint, data=mydata)
 
     sleeptime = random.choice(range(3, 20))
     time.sleep(sleeptime)
