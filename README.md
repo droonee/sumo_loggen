@@ -3,9 +3,11 @@ Generate fake log messages for different log types
 
 ## Prerequisites
 - launch Ubuntu t2.medium instance and connect
+    
     sudo apt update
     sudo apt install python3-pip
     pip install Faker (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
+
 - create an HTTP Logs and Metrics source on a hosted collector
 
 ### Steps
