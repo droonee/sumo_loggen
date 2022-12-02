@@ -2,7 +2,7 @@
 Generate fake log messages for different log types
 
 ## Prerequisites
-- launch Ubuntu t2.medium instance and connect
+- Launch Ubuntu t2.medium instance and connect
     
     sudo apt update
     
@@ -10,36 +10,36 @@ Generate fake log messages for different log types
     
     pip install Faker (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
-- create an HTTP Logs and Metrics source on a hosted collector
+- Create an HTTP Logs and Metrics source on a hosted collector
 
 ### Steps
-- install both python files for the desired log type to the same folder on your instance
-- make sure you follow the prequisites to installing necessary packages
-- update the sumo_endpoint variable to the http source endpoint in the *_loggen.py file
-- set the *_loggen.py file to run as a service on the instance
+- Install both python files for the desired log type to the same folder on your instance
+- Make sure you follow the prequisites to installing necessary packages
+- Update the sumo_endpoint variable to the http source endpoint in the *_loggen.py file
+- Set the *_loggen.py file to run as a service on the instance:
 
-    Write the service: sudo nano /etc/systemd/system/loggen.service (name of the service which is loggen in this case)
+        Write the service: sudo nano /etc/systemd/system/loggen.service (name of the service which is loggen in this case)
 
-    Paste the below and edit the filepath:
-    ```
-    [Unit]
-    Description=My fake log service
+        Paste the below and edit the filepath:
+        ```
+        [Unit]
+        Description=My fake log service
 
-    [Service]
-    ExecStart=/usr/bin/python3 /home/ubuntu/<path to *_loggen.py>
-    User=root
-    Group=root
-    
-    [Install]
-    WantedBy=multi-user.target
-    ```
-    Reload daemon: sudo systemctl daemon-reload
+        [Service]
+        ExecStart=/usr/bin/python3 /home/ubuntu/<path to *_loggen.py>
+        User=root
+        Group=root
 
-    Enable service so that it doesn’t get disabled if the server restarts: sudo systemctl enable loggen.service
+        [Install]
+        WantedBy=multi-user.target
+        ```
+        Reload daemon: sudo systemctl daemon-reload
 
-    Start the service: sudo systemctl start loggen.service
+        Enable service so that it doesn’t get disabled if the server restarts: sudo systemctl enable loggen.service
 
-    Check service status: sudo systemctl status loggen
+        Start the service: sudo systemctl start loggen.service
+
+        Check service status: sudo systemctl status loggen
 
 
 
