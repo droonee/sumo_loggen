@@ -20,21 +20,21 @@ fake.add_provider(filepath)
 fake.add_provider(bytes)
 
 # sumo http source endpoint
-sumo_endpoint = "<http source endpoint>"
+sumo_endpoint = "https://endpoint4.collection.sumologic.com/receiver/v1/http/ZaVnC4dhaV0gW5Kp_f4SIkKn8QK00huZG6RRG4YUEVgtVpq_ghGCrIojGb1wrVv5RFq0adTorm9mqNRT7g8-dXlmkknB1hZ4Ovwg_-0v3FHltXN1zzl2Ew=="
 
 # create the randomized apache log
 def apache_log():
     local_time = get_localzone()
     local_time = datetime.datetime.now(local_time).strftime('%Y-%m-%d %H:%M:%S')
 
-    priv_ipv4 = fake.private_ipv4
-    pub_ipv4 = fake.public_ipv4
-    method = fake.method
-    filepath = fake.filepath
-    status_code = fake.status_code
-    bytes = fake.bytes
-    uri = fake.uri
-    useragent = fake.user_agent
+    priv_ipv4 = fake.private_ipv4()
+    pub_ipv4 = fake.public_ipv4()
+    method = fake.method()
+    filepath = fake.filepath()
+    status_code = fake.status_code()
+    bytes = fake.bytes()
+    uri = fake.uri()
+    useragent = fake.user_agent()
     mydata = ('%s %s - - [%s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (priv_ipv4,
               pub_ipv4, local_time, method, uri, status_code, bytes, filepath, useragent))
     
