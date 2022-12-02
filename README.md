@@ -21,7 +21,8 @@ Generate fake log messages for different log types
         Write the service: sudo nano /etc/systemd/system/loggen.service (name of the service which is loggen in this case)
 
         Paste the below and edit the filepath:
-        ```
+        
+        ---------------------
         [Unit]
         Description=My fake log service
 
@@ -32,7 +33,8 @@ Generate fake log messages for different log types
 
         [Install]
         WantedBy=multi-user.target
-        ```
+        ---------------------
+        
         Reload daemon: sudo systemctl daemon-reload
 
         Enable service so that it doesn’t get disabled if the server restarts: sudo systemctl enable loggen.service
