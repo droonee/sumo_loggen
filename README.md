@@ -10,6 +10,8 @@ Generate fake log messages for different log types
     
         sudo pip install Faker (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
+        sudo pip install tzlocal
+
 - Create an HTTP Logs and Metrics source on a hosted collector
 
 ### Steps
