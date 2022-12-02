@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from faker.providers import DynamicProvider
 
 # in the loggen file:
