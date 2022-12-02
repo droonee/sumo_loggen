@@ -48,6 +48,8 @@ Generate fake log messages for different log types
         Check service status:
         sudo systemctl status loggen
 
+### Cleanup
+- stop the instance when you do not need log data flowing
 
 ### Troubleshooting
 - try using receipt time when log searching
