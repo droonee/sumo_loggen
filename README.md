@@ -4,11 +4,11 @@ Generate fake log messages for different log types
 ## Prerequisites
 - Launch Ubuntu t2.medium instance and connect
     
-    sudo apt update
+        sudo apt update
     
-    sudo apt install python3-pip
+        sudo apt install python3-pip
     
-    pip install Faker (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
+        pip install Faker (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
 - Create an HTTP Logs and Metrics source on a hosted collector
 
@@ -34,7 +34,7 @@ Generate fake log messages for different log types
         [Install]
         WantedBy=multi-user.target
         ---------------------
-        
+
         Reload daemon: sudo systemctl daemon-reload
 
         Enable service so that it doesn’t get disabled if the server restarts: sudo systemctl enable loggen.service
