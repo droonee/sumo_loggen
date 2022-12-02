@@ -1,6 +1,5 @@
 #!/usr/bin/python
 from apache_providers import *
-import json
 import datetime
 import time
 import random
