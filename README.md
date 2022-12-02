@@ -1,7 +1,7 @@
 # Random Log Generator
 Generate fake log messages for different log types
 
-## Pre-requisites
+## Prerequisites
 - launch Ubuntu t2.medium instance and connect
     sudo apt update
     sudo apt install python3-pip
