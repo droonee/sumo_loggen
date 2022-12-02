@@ -20,7 +20,7 @@ fake.add_provider(filepath)
 fake.add_provider(bytes)
 
 # sumo http source endpoint
-sumo_endpoint = "https://endpoint4.collection.sumologic.com/receiver/v1/http/ZaVnC4dhaV0gW5Kp_f4SIkKn8QK00huZG6RRG4YUEVgtVpq_ghGCrIojGb1wrVv5RFq0adTorm9mqNRT7g8-dXlmkknB1hZ4Ovwg_-0v3FHltXN1zzl2Ew=="
+sumo_endpoint = "<sumo endpoint>"
 
 # create the randomized apache log
 def apache_log():
