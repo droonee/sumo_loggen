@@ -3,8 +3,12 @@ Generate fake log messages for different log types using Pythons Faker library (
 
 ## Prerequisites
 - Launch Ubuntu LTS 20.04 t2.medium instance and connect
-- Run `python3 setup.py` in Ubuntu terminal
+       
 - Create an HTTP Logs and Metrics source on a hosted collector
+
+- Use `python3 setup.py <http_endpoint>` to install the requirements and setup the dependencies
+
+- Use `source ~/.bashrc` to refresh the HTTP_ENDPOINT global variable.  Test with `echo $HTTP_ENDPOINT`
 
 ### Steps
 - Install both python files for the desired log type to the same folder on your instance
