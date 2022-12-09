@@ -1,9 +1,13 @@
 from faker.providers import DynamicProvider
 
-# in the loggen files:
-# fake = Faker()    >> establish faker instance and
-# fake.add_provider(random_email)    >> add custom providers to the instance by importing them in the loggen file
-# fake.random_email  >> make a call to the provider to generate random value
+## in the loggen file, establish faker instance:
+# fake = Faker()
+
+## add custom providers to the instance by importing them in the loggen file
+# fake.add_provider(email)
+
+## make a call to a provider to generate random value from the list in the provider
+# fake.email
 
 email = DynamicProvider(
      provider_name="email",

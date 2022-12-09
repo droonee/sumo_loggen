@@ -1,5 +1,4 @@
 #!/usr/bin/python
-from apache_providers import *
 import datetime
 import time
 import random
