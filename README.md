@@ -1,17 +1,9 @@
 # Random Log Generator
-Generate fake log messages for different log types
+Generate fake log messages for different log types using Pythons Faker library (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
 ## Prerequisites
 - Launch Ubuntu LTS 20.04 t2.medium instance and connect
-    
-        sudo apt update
-    
-        sudo apt install python3-pip
-    
-        sudo pip install Faker (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
-
-        sudo pip install tzlocal
-
+- Run `python3 setup.py` in Ubuntu terminal
 - Create an HTTP Logs and Metrics source on a hosted collector
 
 ### Steps
