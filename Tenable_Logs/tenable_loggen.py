@@ -82,7 +82,7 @@ def tenable_log():
     log["plugin"]=plugin
     log["port"]=port
     log["scan"]=scan
-    log["severity"]=fake.risk()
+    log["severity"]=fake.severity_text()
     log["state"]=fake.status()
 
 
