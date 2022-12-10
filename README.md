@@ -1,18 +1,14 @@
 # Random Log Generator
-Generate fake log messages for different log types
+Generate fake log messages for different log types using Pythons Faker library (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
 ## Prerequisites
 - Launch Ubuntu LTS 20.04 t2.medium instance and connect
-    
-        sudo apt update
-    
-        sudo apt install python3-pip
-    
-        sudo pip install Faker (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
-
-        sudo pip install tzlocal
-
+       
 - Create an HTTP Logs and Metrics source on a hosted collector
+
+- Use `python3 setup.py <http_endpoint>` to install the requirements and setup the dependencies
+
+- Use `source ~/.bashrc` to refresh the HTTP_ENDPOINT global variable.  Test with `echo $HTTP_ENDPOINT`
 
 ### Steps
 - Install both python files for the desired log type to the same folder on your instance
@@ -55,6 +51,8 @@ Generate fake log messages for different log types
 
 ### Troubleshooting
 - try using receipt time when log searching
+
 - make sure that the absolute path to the Resources folder is accurate in the *_loggen.py file:
         
         sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
+
