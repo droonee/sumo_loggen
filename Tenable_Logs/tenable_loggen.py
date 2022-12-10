@@ -29,6 +29,7 @@ fake.add_provider(filepath)
 fake.add_provider(port)
 fake.add_provider(protocol)
 fake.add_provider(status)
+fake.add_provider(severity_text)
 
 # create the randomized tenable log
 def tenable_log():
