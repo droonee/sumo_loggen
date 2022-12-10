@@ -319,6 +319,7 @@ status = DynamicProvider(
      provider_name="status",
      elements=[
           "OPEN",
+          "REOPENED",
           "CLOSED"
           ]
 )
