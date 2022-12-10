@@ -30,7 +30,7 @@ fake.add_provider(port)
 fake.add_provider(protocol)
 fake.add_provider(status)
 
-# create the randomized apache log
+# create the randomized tenable log
 def tenable_log():
     local_time = get_localzone()
     local_time = datetime.datetime.now(local_time).strftime('%Y-%m-%dT%H:%M:%S')
@@ -87,7 +87,7 @@ def tenable_log():
 
 
     json_log = json.dumps(log)
-    print(json_log)
+    #print(json_log)
     
     # post to sumo endpoint
     req = requests.post(sumo_endpoint, data=json_log)

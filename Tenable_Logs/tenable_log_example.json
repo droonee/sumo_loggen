@@ -1,0 +1,42 @@
+{
+    "asset": {
+        "agent_uuid": "b2888bd6781411eda1eb0242ac120002",
+        "device_type": "general-purpose",
+        "fqdn": "srv-42.montgomery.net",
+        "hostname": "srv-42.montgomery.net",
+        "uuid": "e5cb4133-ab35-4595-8772-ae7f9cdd4a33",
+        "ipv4": "10.215.157.105",
+        "operating_system": [
+            "Macintosh; U; Intel Mac OS X 10_12_5"
+        ],
+        "tracked": true
+    },
+    "output": "syslog/server3/",
+    "plugin": {
+        "checks_for_default_account": false,
+        "checks_for_malware": true,
+        "cve": [
+            "CVE-2022-30632"
+        ],
+        "cvss_base_score": 8.0,
+        "description": "This is a description of the vulnerabilities surfaced.",
+        "exploit_available": false,
+        "exploited_by_malware": true,
+        "exploited_by_nessus": false,
+        "id": 219287,
+        "name": "Broken Authentication",
+        "risk_factor": "Medium",
+        "solution": "These are the steps that you need to follow:",
+        "synopsis": "The remote host has an application installed that is affected by multiple vulnerabilities.",
+        "version": 0.5
+    },
+    "port": {
+        "port": 17098,
+        "protocol": "UDP"
+    },
+    "scan": {
+        "completed_at": "2022-12-10T01:28:35"
+    },
+    "severity": "High",
+    "state": "CLOSED"
+}
