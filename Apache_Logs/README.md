@@ -1,1 +1,1 @@
-# Apache Loggen
+# Apache LogGen

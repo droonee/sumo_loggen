@@ -1,11 +1,16 @@
 #!/usr/bin/python
-from apache_providers import *
 import datetime
 import time
 import random
 import requests
+import sys
 from faker import Faker
 from tzlocal import get_localzone
+sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
+from master_provider_list import *
+
+# sumo http source endpoint
+sumo_endpoint = "<sumo endpoint>"
 
 # initialize faker instance and add providers from apache_providers
 fake = Faker()
@@ -17,9 +22,6 @@ fake.add_provider(uri)
 fake.add_provider(user_agent)
 fake.add_provider(filepath)
 fake.add_provider(bytes)
-
-# sumo http source endpoint
-sumo_endpoint = "<sumo endpoint>"
 
 # create the randomized apache log
 def apache_log():

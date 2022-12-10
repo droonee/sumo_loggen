@@ -1,0 +1,43 @@
+{
+    "asset": {
+        "agent_uuid": "b288c0d8781411eda1eb0242ac120002",
+        "device_type": "printer",
+        "fqdn": "roberts.com",
+        "hostname": "roberts.com",
+        "uuid": "1cc42758-ec9d-4537-b808-f0d2babcdbb4",
+        "ipv4": "10.194.135.159",
+        "operating_system": [
+            "Macintosh; PPC Mac OS X 10_12_7"
+        ],
+        "tracked": true
+    },
+    "output": "system/",
+    "plugin": {
+        "checks_for_default_account": true,
+        "checks_for_malware": true,
+        "cve": [
+            "CVE-2022-30633"
+        ],
+        "cvss_base_score": 3.6,
+        "description": "This is a description of the vulnerabilities surfaced.",
+        "exploit_available": true,
+        "exploited_by_malware": true,
+        "exploited_by_nessus": true,
+        "id": 144766,
+        "name": "Cross-Site Scripting",
+        "risk_factor": "Critical",
+        "solution": "These are the steps that you need to follow:",
+        "synopsis": "The remote host has an application installed that is affected by multiple vulnerabilities.",
+        "version": 1.4
+    },
+    "port": {
+        "port": 22,
+        "protocol": "UDP"
+    },
+    "scan": {
+        "completed_at": "2022-12-10T01:56:35"
+    },
+    "severity": "high",
+    "severity_id": 0,
+    "state": "OPEN"
+}
