@@ -51,3 +51,8 @@ Generate fake log messages for different log types using Pythons Faker library (
 
 ### Troubleshooting
 - try using receipt time when log searching
+
+- make sure that the absolute path to the Resources folder is accurate in the *_loggen.py file:
+        
+        sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
+
