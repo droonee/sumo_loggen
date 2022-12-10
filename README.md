@@ -2,19 +2,19 @@
 Generate fake log messages for different log types using Pythons Faker library (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
 ## Prerequisites
-- Launch Ubuntu LTS 20.04 t2.medium instance and connect
+- Launch an Ubuntu LTS 20.04 t2.medium AWS EC2 instance
        
-- Create an HTTP Logs and Metrics source on a hosted collector
+- Create an HTTP Logs and Metrics source on a Hosted Collector in your Sumo Logic account
+
+- Connect to EC2 and use `git clone https://github.com/droonee/sumo_loggen.git sumo_loggen && cd sumo_loggen`
 
 - Use `python3 setup.py <http_endpoint>` to install the requirements and setup the dependencies
 
-- Use `source ~/.bashrc` to refresh the HTTP_ENDPOINT global variable.  Test with `echo $HTTP_ENDPOINT`
+- Use `source ~/.bashrc` to refresh the HTTP_ENDPOINT global variable.  Test with `echo $HTTP_ENDPOINT` to verify the global variable is set
 
 ### Steps
-- Install both python files for the desired log type to the same folder on your instance
-- Make sure you follow the prequisites to installing necessary packages
-- Update the sumo_endpoint variable to the http source endpoint in the *_loggen.py file
-- Set the *_loggen.py file to run as a service on the instance:
+- Update the sumo_endpoint variable to the http source endpoint in the *_loggen.py file **David took care of this with global env variable**
+- Set the *_loggen.py file to run as a service on the instance: **David to write code that runs from parent script where command line argument specifies the log type you want to generate - will be able to automate the systemd service setup with this change**
 
         Write the service:
         sudo nano /etc/systemd/system/loggen.service (name of the service which is loggen in this case)
