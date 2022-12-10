@@ -10,7 +10,7 @@ Generate fake log messages for different log types using Pythons Faker library (
 
 - Use `python3 setup.py <http_endpoint>` to install the requirements and setup the dependencies
 
-- Use `source ~/.bashrc` to refresh the HTTP_ENDPOINT global variable.  Test with `echo $HTTP_ENDPOINT` to verify the global variable is set
+- Use `source ~/.bashrc` to refresh the global variable.  Test with `echo $HTTP_ENDPOINT` to verify the global variable is set
 
 ### Steps
 - Update the sumo_endpoint variable to the http source endpoint in the *_loggen.py file **David took care of this with global env variable**
