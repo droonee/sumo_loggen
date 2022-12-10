@@ -30,6 +30,7 @@ fake.add_provider(port)
 fake.add_provider(protocol)
 fake.add_provider(status)
 fake.add_provider(severity_text)
+fake.add_provider(severity_int)
 
 # create the randomized tenable log
 def tenable_log():
@@ -84,6 +85,7 @@ def tenable_log():
     log["port"]=port
     log["scan"]=scan
     log["severity"]=fake.severity_text()
+    log["severity_id"]=fake.severity_int()
     log["state"]=fake.status()
 
 

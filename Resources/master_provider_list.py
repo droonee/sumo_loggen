@@ -300,11 +300,12 @@ risk = DynamicProvider(
 
 severity_int = DynamicProvider(
      provider_name="severity_int",
-     elements=[1,
+     elements=[0,
+        1,
+        2,
         3,
-        6,
-        9,
-        10]
+        4,
+        5]
 )
 
 severity_text = DynamicProvider(
