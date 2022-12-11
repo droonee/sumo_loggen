@@ -4,13 +4,15 @@ import time
 import random
 import requests
 import sys
+import os
 from faker import Faker
 from tzlocal import get_localzone
+
 sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
 from master_provider_list import *
 
-# sumo http source endpoint
-sumo_endpoint = "<sumo endpoint>"
+# utilizing the sumo http source endpoint set as global environment variable
+sumo_endpoint = os.environ.get('HTTP_ENDPOINT')
 
 # initialize faker instance and add providers from apache_providers
 fake = Faker()
