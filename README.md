@@ -13,6 +13,7 @@ Generate fake log messages for different log types using Pythons Faker library (
 - Use `source ~/.bashrc` to refresh the global variable.  Test with `echo $HTTP_ENDPOINT` to verify the global variable is set
 
 ### Steps
+- Input the HTTP Endpoint into the *_loggen.py file you will run
 - Set the *_loggen.py file to run as a service on the instance: **David to write code that runs from parent script where command line argument specifies the log type you want to generate - will be able to automate the systemd service setup with this change**
 
         Write the service:
