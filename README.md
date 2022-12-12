@@ -8,9 +8,7 @@ Generate fake log messages for different log types using Pythons Faker library (
 
 - Connect to EC2 and use `git clone https://github.com/droonee/sumo_loggen.git sumo_loggen && cd sumo_loggen`
 
-- Use `python3 setup.py <http_endpoint>` to install the requirements and setup the dependencies
-
-- Use `source ~/.bashrc` to refresh the global variable.  Test with `echo $HTTP_ENDPOINT` to verify the global variable is set
+- Use `python3 setup.py` to install the requirements and setup the dependencies
 
 ### Steps
 - Input the HTTP Endpoint into the *_loggen.py file you will run
