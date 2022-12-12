@@ -1,2 +1,2 @@
 # Proofpoint TAP LogGen
-Note: Make sure "Copy logs for each recipient" and "Copy logs for each MessagePart" are enabled on the Proofpoint Tap C2C colletor.
+Note: This Log Gen operates similarly to enabling the "Copy logs for each recipient" and "Copy logs for each MessagePart" on the Proofpoint Tap C2C colletor.
