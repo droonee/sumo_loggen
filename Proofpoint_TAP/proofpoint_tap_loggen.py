@@ -107,11 +107,11 @@ def proofpoint_log():
 
 
     json_log_full = json.dumps(log)
-    print(json_log_full)
+    # print(json_log_full)
     json_log_message_part_1 = json.dumps(message_part_1)
-    print(json_log_message_part_1)
+    # print(json_log_message_part_1)
     json_log_message_part_2 = json.dumps(message_part_2)
-    print(json_log_message_part_2)
+    # print(json_log_message_part_2)
     
     # post to full log to sumo endpoint
     req = requests.post(sumo_endpoint, data=json_log_full)
