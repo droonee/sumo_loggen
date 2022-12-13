@@ -9,6 +9,9 @@ from faker.providers import DynamicProvider
 ## make a call to a provider to generate random value from the list in the provider
 # fake.email
 
+
+# -------- GENERAL ---------
+
 bytes = DynamicProvider(
      provider_name="bytes",
      elements=[654,
@@ -84,6 +87,58 @@ filepath = DynamicProvider(
         "syslog/server3/",
         "application/mobile/",
         "application/web/"]
+)
+
+file_hash_MD5 = DynamicProvider(
+     provider_name="file_hash_md5",
+     elements=[
+          "098f6bcd4621d373cade4e832627b4f6",
+          "ad0234829205b9033196ba818f7a872b",
+          "8ad8757baa8564dc136c1e07507f4a98",
+          "86985e105f79b95d6bc918fb45ec7727",
+          "e3d704f3542b44a621ebed70dc0efe13",
+          "a619d7b3730a2ea8723aa94599862ad4",
+          "4ade18b36c1abdb8e8cef2afabbcde85",
+          "91d720608531ba221234c9649053a69b",
+          "739969b53246b2c727850dbb3490ede6",
+          "c1a8e059bfd1e911cf10b626340c9a54",
+          "f696282aa4cd4f614aa995190cf442fe",
+          "60474c9c10d7142b7508ce7a50acf414",
+          "33fc3dbd51a8b38a38b1b85b6a76b42b",
+          "b99c94f62fb2a61433c4e44e27406050",
+          "4b377d23309d4ed39c9da5791417aeff",
+          "0c1ccf98666ed505310c0471529429db",
+          "90f77b22d8c741784808a22ea82515c5",
+          "df71df92c31111f810a7d89bd2c2e35d",
+          "45357a5c731751a44000d1ba2c0e25fb",
+          "b428cbb02358afc32cf32f9bdb725a51"
+     ]
+)
+
+file_hash_sha256 = DynamicProvider(
+     provider_name="file_hash_sha256",
+     elements=[
+          "60303ae22b998861bce3b28f33eec1be758a213c86c93c076dbe9f558c11c752",
+          "fd61a03af4f77d870fc21e05e7e80678095c92d808cfb3b5c279ee04c74aca13",
+          "a4e624d686e03ed2767c0abd85c14426b0b1157d2ce81d27bb4fe4f6f01d688a",
+          "1b4f0e9851971998e732078544c96b36c3d01cedf7caa332359d6f1d83567014",
+          "a140c0c1eda2def2b830363ba362aa4d7d255c262960544821f556e16661b6ff",
+          "ed0cb90bdfa4f93981a7d03cff99213a86aa96a6cbcf89ec5e8889871f088727",
+          "bd7c911264aae15b66d4291b6850829aa96986b1d3ead34d1fdbfef27056c112",
+          "1f9bfeb15fee8a10c4d0711c7eb0c083962123e1918e461b6a508e7146c189b2",
+          "b4451034d3b6590060ce9484a28b88dd332a80a22ae8e39c9c5cb7357ab26c9f",
+          "ec2738feb2bbb0bc783eb4667903391416372ba6ed8b8dddbebbdb37e5102473",
+          "744ea9ec6fa0a83e9764b4e323d5be6b55a5accfc7fe4c08eab6a8de1fca4855",
+          "a98ec5c5044800c88e862f007b98d89815fc40ca155d6ce7909530d792e909ce",
+          "166fb78f0f44d271a2d9065272a67ba373c3266b59d85847c02ef695af0cbf3f",
+          "40cca5cc13abf91c7d5a72c0aea9bcbea4108946e67f24c0c23003cbf307efa2",
+          "ebb39b342baead7aa52c0bcd6c0d4ba061b42f3a9dd6bafa2407a096b91b2450",
+          "8ffd063b93a29f84389a635552740a9f0a7234169994158fb19692f5964dd7f5",
+          "813e41d4092656716cb0b46a1e5002857066cdaef8decf182ae15abf0b43b8d5",
+          "b3c0e5febe1ec8875cd4a06fa4a99abf270de3f131d83a65f897322edbc12aec",
+          "840b1bf550a873a1dbed1381abe379cb9f1e76067b6de54bcd37367ce6ca3c0a",
+          "946cc198869790373cd8424cd9073e9e29aaa17b6f6a6ec55b38110cae856385"
+     ]
 )
 
 filename = DynamicProvider(
@@ -514,4 +569,44 @@ uuid = DynamicProvider(
         "759ed64a-cda8-42bb-80f8-1998ec91b5cb",
         "8b8643bc-f83f-4757-a4cd-d3a820e344a4"
      ]
+)
+
+
+# -------- SERVICE SPECIFIC ---------
+
+
+# Proopoint TAP
+
+email_threat_class = DynamicProvider(
+     provider_name="email_threat_class",
+     elements=[
+          "SPAM",
+          "MALWARE",
+          "PHISHING",
+          "IMPOSTER",
+          "BULK MAIL"
+     ]
+)
+
+email_threat_type = DynamicProvider(
+     provider_name="email_threat_type",
+     elements=[
+          "ATTACHMENT",
+          "URL"
+     ]
+)
+
+email_threat_subject = DynamicProvider(
+     provider_name="email_threat_subject",
+     elements=[
+          "Please find a totally safe invoice attached.",
+          "Check this image out! It won't break your computer.",
+          "This is not a spam email I promise.",
+          "CLICK HERE for a MILLION dollars!",
+     ]
+)
+
+email_threat_score = DynamicProvider(
+     provider_name="email_threat_score",
+     elements=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,10,17,98,45,63,34]
 )

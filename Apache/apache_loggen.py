@@ -12,7 +12,8 @@ sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
 from master_provider_list import *
 
 # utilizing the sumo http source endpoint set as global environment variable
-sumo_endpoint = os.environ.get('HTTP_ENDPOINT')
+#sumo_endpoint = os.environ.get('HTTP_ENDPOINT')
+sumo_endpoint = <http_endpoint>
 
 # initialize faker instance and add providers from apache_providers
 fake = Faker()
