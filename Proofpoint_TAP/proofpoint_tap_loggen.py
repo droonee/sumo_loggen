@@ -27,6 +27,7 @@ fake.add_provider(private_ipv4)
 fake.add_provider(email_threat_class)
 fake.add_provider(email_threat_type)
 fake.add_provider(email_threat_subject)
+fake.add_provider(email_threat_score)
 
 
 # create the randomized proofpoint TAP log and duplicates
@@ -75,7 +76,7 @@ def proofpoint_log():
     threats_info_map2["threatUrl"]="https://threatinsight.proofpoint.com/"
 
     # build parent object
-    log["GUID"]=str(fake.uuid())
+    log["GUID"]=fake.uuid()
     log["QID"]="r2FNwRHF004109"
     log["ccAddresses"]=[fake.email(), fake.email()]
     log["clusterId"]="pharmtech_hosted"
@@ -85,13 +86,13 @@ def proofpoint_log():
     log["headerFrom"]="\"A. Badguy\" <badguy@evil.zz>"
     log["headerReplyTo"]=None
     log["headerTo"]="\"Clark Kent\" <clark.kent@pharmtech.zz>; \"Diana Prince\" <diana.prince@pharmtech.zz>"
-    log["impostorScore"]=round(random.uniform(0, 100))
-    log["malwareScore"]=round(random.uniform(0, 100))
+    log["impostorScore"]=fake.email_threat_score()
+    log["malwareScore"]=fake.email_threat_score()
     log["messageID"]="20160624211145.62086.mail@evil.zz"
     log["messageParts"]=[message_part_1,message_part_2]
     log["messageTime"]=local_time
     log["modulesRun"]=["pdr","sandbox", "spam", "urldefense"]
-    log["phishScore"]=round(random.uniform(0, 100))
+    log["phishScore"]=fake.email_threat_score()
     log["policyRoutes"]=["default_inbound","executives"]
     log["quarantineFolder"]="Attachment Defense"
     log["quarantineRule"]="module.sandbox.threat"
@@ -99,7 +100,7 @@ def proofpoint_log():
     log["replyToAddress"]=None
     log["sender"]=fake.email()
     log["senderIP"]=fake.private_ipv4()
-    log["spamScore"]=round(random.uniform(0, 100))
+    log["spamScore"]=fake.email_threat_score()
     log["subject"]=fake.email_threat_subject()
     log["threatsInfoMap"]=[threats_info_map1,threats_info_map2]
     log["toAddress"]=[log["recipient"]]
