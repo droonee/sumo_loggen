@@ -11,13 +11,12 @@ import hashlib
 from faker import Faker
 from tzlocal import get_localzone
 
-#sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
-sys.path.insert(0, '/Users/jalee/Documents/Projects/LogGen/sumo_loggen/Resources')
+sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
 from master_provider_list import *
 
 # utilizing the sumo http source endpoint set as global environment variable
 #sumo_endpoint = os.environ.get('HTTP_ENDPOINT')
-#sumo_endpoint = <http_endpoint>
+sumo_endpoint = <http_endpoint>
 
 # initialize faker instance and add providers from apache_providers
 fake = Faker()
@@ -74,8 +73,6 @@ def proofpoint_log():
     threats_info_map2["threatStatus"]="active"
     threats_info_map2["threatType"]=fake.email_threat_type()
     threats_info_map2["threatUrl"]="https://threatinsight.proofpoint.com/"
-
-
 
     # build parent object
     log["GUID"]=str(fake.uuid())
