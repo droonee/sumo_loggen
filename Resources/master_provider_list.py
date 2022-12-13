@@ -605,3 +605,8 @@ email_threat_subject = DynamicProvider(
           "CLICK HERE for a MILLION dollars!",
      ]
 )
+
+email_threat_score = DynamicProvider(
+     provider_name="email_threat_score",
+     elements=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,10,17,98,45,63,34]
+)
