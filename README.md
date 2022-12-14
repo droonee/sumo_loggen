@@ -11,7 +11,7 @@ Generate fake log messages for different log types using Pythons Faker library (
 - Use `bash setup.sh` to install the requirements and setup the dependencies
 
 ### Steps to use
-- Input the HTTP Endpoint into the *_loggen.py file you will run
+- Input the HTTP Endpoint into the sumo_loggen.py file
 
 ### Cleanup
 - stop the instance when you do not need log data flowing
