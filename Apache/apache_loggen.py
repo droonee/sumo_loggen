@@ -1,19 +1,12 @@
 #!/usr/bin/python
-import datetime
-import time
 import random
 import requests
 import sys
 import os
 from faker import Faker
-from tzlocal import get_localzone
 
 sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
 from master_provider_list import *
-
-# utilizing the sumo http source endpoint set as global environment variable
-#sumo_endpoint = os.environ.get('HTTP_ENDPOINT')
-sumo_endpoint = <http_endpoint>
 
 # initialize faker instance and add providers from apache_providers
 fake = Faker()
@@ -26,11 +19,7 @@ fake.add_provider(user_agent)
 fake.add_provider(filepath)
 fake.add_provider(bytes)
 
-# create the randomized apache log
-def apache_log():
-    local_time = get_localzone()
-    local_time = datetime.datetime.now(local_time).strftime('%Y-%m-%d %H:%M:%S')
-
+def loggen(endpoint, time):
     priv_ipv4 = fake.private_ipv4()
     pub_ipv4 = fake.public_ipv4()
     method = fake.method()
@@ -40,13 +29,10 @@ def apache_log():
     uri = fake.uri()
     useragent = fake.user_agent()
     mydata = ('%s %s - - [%s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (priv_ipv4,
-              pub_ipv4, local_time, method, uri, status_code, bytes, filepath, useragent))
-    
+              pub_ipv4, time, method, uri, status_code, bytes, filepath, useragent))
+
     # post to sumo endpoint
-    req = requests.post(sumo_endpoint, data=mydata)
-
-    sleeptime = random.choice(range(3, 20))
-    time.sleep(sleeptime)
-
-while True:
-    apache_log()
+    try:
+        req = requests.post(endpoint, data=mydata)
+    except:
+        return
