@@ -103,9 +103,12 @@ def loggen(endpoint, time):
     json_log_message_part_2 = json.dumps(message_part_2)
     # print(json_log_message_part_2)
     
-    # post full log to sumo endpoint
-    req = requests.post(endpoint, data=json_log_full)
-
-    # post individual message parts to sumo endpoint
-    req2 = requests.post(endpoint, data=json_log_message_part_1)
-    req3 = requests.post(endpoint, data=json_log_message_part_2)
+    try:
+        # post full log to sumo endpoint
+        req = requests.post(endpoint, data=json_log_full)
+        
+        # post individual message parts to sumo endpoint
+        req2 = requests.post(endpoint, data=json_log_message_part_1)
+        req3 = requests.post(endpoint, data=json_log_message_part_2)
+    except:
+        return
