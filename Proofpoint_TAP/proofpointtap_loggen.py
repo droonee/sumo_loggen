@@ -1,22 +1,14 @@
 #!/usr/bin/python
-import datetime
-import time
 import random
 import requests
 import json
 import sys
 import os
-import random
 import hashlib
 from faker import Faker
-from tzlocal import get_localzone
 
 sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
 from master_provider_list import *
-
-# utilizing the sumo http source endpoint set as global environment variable
-#sumo_endpoint = os.environ.get('HTTP_ENDPOINT')
-sumo_endpoint = <http_endpoint>
 
 # initialize faker instance and add providers from apache_providers
 fake = Faker()
@@ -31,10 +23,7 @@ fake.add_provider(email_threat_score)
 
 
 # create the randomized proofpoint TAP log and duplicates
-def proofpoint_log():
-    local_time = get_localzone()
-    local_time = datetime.datetime.now(local_time).strftime('%Y-%m-%dT%H:%M:%S')
-
+def loggen(endpoint, time):
     # initialize objects
     log={}
     message_part_1={}
@@ -90,7 +79,7 @@ def proofpoint_log():
     log["malwareScore"]=fake.email_threat_score()
     log["messageID"]="20160624211145.62086.mail@evil.zz"
     log["messageParts"]=[message_part_1,message_part_2]
-    log["messageTime"]=local_time
+    log["messageTime"]=time
     log["modulesRun"]=["pdr","sandbox", "spam", "urldefense"]
     log["phishScore"]=fake.email_threat_score()
     log["policyRoutes"]=["default_inbound","executives"]
@@ -114,16 +103,9 @@ def proofpoint_log():
     json_log_message_part_2 = json.dumps(message_part_2)
     # print(json_log_message_part_2)
     
-    # post to full log to sumo endpoint
-    req = requests.post(sumo_endpoint, data=json_log_full)
+    # post full log to sumo endpoint
+    req = requests.post(endpoint, data=json_log_full)
 
     # post individual message parts to sumo endpoint
-    req2 = requests.post(sumo_endpoint, data=json_log_message_part_1)
-    req3 = requests.post(sumo_endpoint, data=json_log_message_part_2)
-
-
-    sleeptime = random.choice(range(3, 20))
-    time.sleep(sleeptime)
-
-while True:
-    proofpoint_log()
+    req2 = requests.post(endpoint, data=json_log_message_part_1)
+    req3 = requests.post(endpoint, data=json_log_message_part_2)
