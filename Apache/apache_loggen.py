@@ -31,8 +31,8 @@ def loggen(endpoint, time):
     mydata = ('%s %s - - [%s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (priv_ipv4,
               pub_ipv4, time, method, uri, status_code, bytes, filepath, useragent))
 
-    # post to sumo endpoint
     try:
+        # post to sumo endpoint
         req = requests.post(endpoint, data=mydata)
     except:
         return
