@@ -83,9 +83,9 @@ def loggen(endpoint, time):
 
     json_log = json.dumps(log)
     #print(json_log)
-    
-    # post to sumo
+   
     try:
+        # post to sumo endpoint
         req = requests.post(endpoint, data=json_log)
     except:
         return
