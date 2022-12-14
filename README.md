@@ -10,7 +10,7 @@ Generate fake log messages for different log types using Pythons Faker library (
 
        git clone https://github.com/droonee/sumo_loggen.git sumo_loggen && cd sumo_loggen && chmod +x setup.sh && sudo su
 
-- Run `bash setup.sh` to install the requirements and setup the dependencies
+- While in 'root' user, run `bash setup.sh` to install the requirements and setup the dependencies
 
 ### Steps to use
 - Input the HTTP Endpoint into the sumo_loggen.py file located in the parent sumo_loggen directory
