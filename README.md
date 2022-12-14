@@ -1,56 +1,31 @@
 # Random Log Generator
 Generate fake log messages for different log types using Pythons Faker library (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
-## Prerequisites
+### Prerequisites
 - Launch an Ubuntu LTS 20.04 t2.medium AWS EC2 instance
        
 - Create an HTTP Logs and Metrics source on a Hosted Collector in your Sumo Logic account
 
-- Connect to EC2 and use `git clone https://github.com/droonee/sumo_loggen.git sumo_loggen && cd sumo_loggen && chmod +x setup.sh && sudo su`
+![Screen Shot 2022-12-14 at 1 10 32 PM](https://user-images.githubusercontent.com/91282834/207673655-4c42c393-f3ba-45dd-bd6c-a41c4c8016a3.png)
 
-- Use `bash setup.sh` to install the requirements and setup the dependencies
+- Connect to EC2 instance and run 
 
-### Steps
-- Input the HTTP Endpoint into the *_loggen.py file you will run
-- Set the *_loggen.py file to run as a service on the instance: **David to write code that runs from parent script where command line argument specifies the log type you want to generate - will be able to automate the systemd service setup with this change**
+       git clone https://github.com/droonee/sumo_loggen.git sumo_loggen && cd sumo_loggen && chmod +x setup.sh && sudo su
 
-        Write the service:
-        sudo nano /etc/systemd/system/loggen.service (name of the service which is loggen in this case)
+- Run `bash setup.sh` to install the requirements and setup the dependencies
 
-        Paste the below and edit the filepath:
-        
-        ---------------------
-        [Unit]
-        Description=My fake log service
+### Steps to use
+- Input the HTTP Endpoint into the sumo_loggen.py file located in the parent directory
 
-        [Service]
-        ExecStart=/usr/bin/python3 /home/ubuntu/<path to *_loggen.py>
-        User=root
-        Group=root
-
-        [Install]
-        WantedBy=multi-user.target
-        ---------------------
-
-        Reload daemon:
-        sudo systemctl daemon-reload
-
-        Enable service so that it doesn’t get disabled if the server restarts:
-        sudo systemctl enable loggen.service
-
-        Start the service:
-        sudo systemctl start loggen.service
-
-        Check service status:
-        sudo systemctl status loggen
+- Run `sudo systemctl daemon-reload`
 
 ### Cleanup
-- stop the instance when you do not need log data flowing
+- Stop the EC2 instance when you do not need log data flowing
 
 ### Troubleshooting
-- try using receipt time when log searching
+- Try using receipt time when log searching
 
-- make sure that the absolute path to the Resources folder is accurate in the *_loggen.py file:
+- Make sure that the absolute path to the Resources folder is accurate in the *_loggen.py file:
         
         sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
 

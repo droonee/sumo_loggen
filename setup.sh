@@ -25,7 +25,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable loggen.service
 echo "Service enabled"
 
-#sudo systemctl start loggen.service
-#echo "Service started"
+sudo systemctl start loggen.service
+echo "Service started"
 
 su -l ubuntu
