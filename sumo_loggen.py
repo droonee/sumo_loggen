@@ -3,7 +3,7 @@ import datetime
 import random
 import time
 from tzlocal import get_localzone
-from master import *
+from master_import import *
 
 # add your Sumo HTTP endpoint here
 HTTP_ENDPOINT = ""
