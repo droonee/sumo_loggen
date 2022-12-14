@@ -17,7 +17,7 @@ Generate fake log messages for different log types using Pythons Faker library (
 
 - Apache is selcted to begin logging by default.  Change the data source loggen in the sumo_loggen.py file
 
-- Any time a change is made in sumo_loggen.py, the following needs to be run
+- **Any time a change is made in sumo_loggen.py, the following needs to be run**
 
        sudo systemctl daemon-reload
        sudo systemctl restart loggen.service
