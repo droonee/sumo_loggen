@@ -12,7 +12,7 @@ while True:
     local_time = get_localzone()
     local_time = datetime.datetime.now(local_time).strftime('%Y-%m-%d %H:%M:%S')
 
-    ### list of services to choose from ###
+    ### list of services to choose from - Apache is the default loggen ###
     # Apache
     # Tenable
     # ProofpointTAP
