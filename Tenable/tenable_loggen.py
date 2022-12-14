@@ -1,21 +1,13 @@
 #!/usr/bin/python
-import datetime
-import time
 import random
 import requests
 import json
 import sys
 import os
-import random
 from faker import Faker
-from tzlocal import get_localzone
 
 sys.path.insert(0, '/home/ubuntu/sumo_loggen/Resources')
 from master_provider_list import *
-
-# utilizing the sumo http source endpoint set as global environment variable
-#sumo_endpoint = os.environ.get('HTTP_ENDPOINT')
-sumo_endpoint = <http_endpoint>
 
 # initialize faker instance and add providers from apache_providers
 fake = Faker()
@@ -36,10 +28,7 @@ fake.add_provider(severity_text)
 fake.add_provider(severity_int)
 
 # create the randomized tenable log
-def tenable_log():
-    local_time = get_localzone()
-    local_time = datetime.datetime.now(local_time).strftime('%Y-%m-%dT%H:%M:%S')
-
+def loggen(endpoint, time):
     # initialize objects
     log={}
     asset={}
@@ -79,7 +68,7 @@ def tenable_log():
     port["protocol"]=fake.protocol()
 
     # build scan object
-    scan["completed_at"]=local_time    
+    scan["completed_at"]=time    
 
     # build parent object
     log["asset"]=asset
@@ -95,11 +84,8 @@ def tenable_log():
     json_log = json.dumps(log)
     #print(json_log)
     
-    # post to sumo endpoint
-    req = requests.post(sumo_endpoint, data=json_log)
-
-    sleeptime = random.choice(range(3, 20))
-    time.sleep(sleeptime)
-
-while True:
-    tenable_log()
+    # post to sumo
+    try:
+        req = requests.post(endpoint, data=json_log)
+    except:
+        return
