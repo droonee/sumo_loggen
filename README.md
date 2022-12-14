@@ -17,6 +17,8 @@ Generate fake log messages for different log types using Pythons Faker library (
 ### Steps to use
 - Input the HTTP Endpoint into the sumo_loggen.py file located in the parent directory
 
+- Run `sudo systemctl daemon-reload`
+
 ### Cleanup
 - Stop the EC2 instance when you do not need log data flowing
 
