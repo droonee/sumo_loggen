@@ -1,4 +1,4 @@
-## Random Log Generator
+# Random Log Generator
 Generate fake log messages for different log types using Pythons Faker library (Link to Faker Docs: https://faker.readthedocs.io/en/master/index.html)
 
 ### Prerequisites
