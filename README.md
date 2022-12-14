@@ -13,9 +13,9 @@ Generate fake log messages for different log types using Pythons Faker library (
 - Run `bash setup.sh` to install the requirements and setup the dependencies
 
 ### Steps to use
-- Input the HTTP Endpoint into the sumo_loggen.py file located in the parent directory
+- Input the HTTP Endpoint into the sumo_loggen.py file located in the parent sumo_loggen directory
 
-- Any time a different loggen is chosen, run the following  
+- Apache is selcted to begin logging by default.  Any time a different loggen is chosen, run the following to restart the systemd service
 
        sudo systemctl daemon-reload
        sudo systemctl restart loggen.service
