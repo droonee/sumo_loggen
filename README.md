@@ -10,13 +10,13 @@ Generate fake log messages for different log types using Pythons Faker library (
 
 - Use `bash setup.sh` to install the requirements and setup the dependencies
 
-### Steps
+## Steps to use
 - Input the HTTP Endpoint into the *_loggen.py file you will run
 
-### Cleanup
+## Cleanup
 - stop the instance when you do not need log data flowing
 
-### Troubleshooting
+## Troubleshooting
 - try using receipt time when log searching
 
 - make sure that the absolute path to the Resources folder is accurate in the *_loggen.py file:
