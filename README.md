@@ -12,37 +12,6 @@ Generate fake log messages for different log types using Pythons Faker library (
 
 ### Steps
 - Input the HTTP Endpoint into the *_loggen.py file you will run
-- Set the *_loggen.py file to run as a service on the instance: **David to write code that runs from parent script where command line argument specifies the log type you want to generate - will be able to automate the systemd service setup with this change**
-
-        Write the service:
-        sudo nano /etc/systemd/system/loggen.service (name of the service which is loggen in this case)
-
-        Paste the below and edit the filepath:
-        
-        ---------------------
-        [Unit]
-        Description=My fake log service
-
-        [Service]
-        ExecStart=/usr/bin/python3 /home/ubuntu/<path to *_loggen.py>
-        User=root
-        Group=root
-
-        [Install]
-        WantedBy=multi-user.target
-        ---------------------
-
-        Reload daemon:
-        sudo systemctl daemon-reload
-
-        Enable service so that it doesn’t get disabled if the server restarts:
-        sudo systemctl enable loggen.service
-
-        Start the service:
-        sudo systemctl start loggen.service
-
-        Check service status:
-        sudo systemctl status loggen
 
 ### Cleanup
 - stop the instance when you do not need log data flowing
