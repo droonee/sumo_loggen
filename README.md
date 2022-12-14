@@ -6,8 +6,6 @@ Generate fake log messages for different log types using Pythons Faker library (
        
 - Create an HTTP Logs and Metrics source on a Hosted Collector in your Sumo Logic account
 
-![Screen Shot 2022-12-14 at 1 10 32 PM](https://user-images.githubusercontent.com/91282834/207673655-4c42c393-f3ba-45dd-bd6c-a41c4c8016a3.png)
-
 - Connect to EC2 instance and run 
 
        git clone https://github.com/droonee/sumo_loggen.git sumo_loggen && cd sumo_loggen && chmod +x setup.sh && sudo su
